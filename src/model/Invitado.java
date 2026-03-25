@@ -117,7 +117,3 @@ public class Invitado {
 				+ this.getCorreo() + '\'';
 	}
 }
-
-
-
->>>>>>> 75a10faca468507b1ae6581801322b6b45331215
