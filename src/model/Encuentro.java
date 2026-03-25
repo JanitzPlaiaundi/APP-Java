@@ -89,7 +89,3 @@ public class Encuentro {
 		return this.id == otro.id;
 	}
 }
-
-
-
->>>>>>> 75a10faca468507b1ae6581801322b6b45331215
