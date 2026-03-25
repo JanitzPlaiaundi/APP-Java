@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-//v 13/02/2026 12:03
 package util;
 
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class GestorInvitado {
 
         listaInvitados.add(nuevoInvitado);
 
-        return "Invitado con nombre de usuario: " + nombreUsuario + " creado con éxito.";
+        return "Invitado con nombre de usuario: " + nombreUsuario + " creado con Ã©xito.";
     }
 
     //listar invitados
@@ -59,7 +57,7 @@ public class GestorInvitado {
     ) {
         if (listaInvitados.isEmpty()) {
             
-            return "La lista de invitados está vacía.";
+            return "La lista de invitados estÃ¡ vacÃ­a.";
             
         }
 
@@ -73,7 +71,7 @@ public class GestorInvitado {
                 invitado.setCorreo(correo);
                 invitado.setContrasena(contrasena);
 
-                return "El invitado se ha actualizado con éxito.";
+                return "El invitado se ha actualizado con Ã©xito.";
                
             }
             
@@ -84,7 +82,7 @@ public class GestorInvitado {
     //eliminar invitado
     public String eliminarInvitado(String nombreUsuario) {
         if (listaInvitados.isEmpty()) {
-            return "La lista de invitados está vacía.";
+            return "La lista de invitados estÃ¡ vacÃ­a.";
         }
 
         
@@ -93,7 +91,7 @@ public class GestorInvitado {
         );
 
         if (eliminado) {
-            return "El invitado se ha eliminado con éxito.";
+            return "El invitado se ha eliminado con Ã©xito.";
         }
 
         return "El invitado no se ha encontrado.";
@@ -104,116 +102,3 @@ public class GestorInvitado {
         return listaInvitados.size();
     }
 }
-
-
-
-=======
-//v 13/02/2026 12:03
-package util;
-
-import java.util.ArrayList;
-import model.Invitado;
-
-public class GestorInvitado {
-
-    private static ArrayList<Invitado> listaInvitados = new ArrayList<>();
-
-    //crear invitado
-    public String crearInvitado(
-            String nombreUsuario,
-            String primerApellido,
-            String segundoApellido,
-            String telefono,
-            String carrera,
-            String correo,
-            String contrasena
-    ) {
-        Invitado nuevoInvitado = new Invitado(
-                nombreUsuario,
-                primerApellido,
-                segundoApellido,
-                telefono,
-                carrera,
-                correo,
-                contrasena
-        );
-
-        listaInvitados.add(nuevoInvitado);
-
-        return "Invitado con nombre de usuario: " + nombreUsuario + " creado con éxito.";
-    }
-
-    //listar invitados
-    public String listarInvitados() {
-        if (listaInvitados.isEmpty()) {
-            return "No hay invitados por ahora";
-        }
-        
-        String listaString = "";
-        for(Invitado i : listaInvitados) {
-            listaString += "\n" + i.toString();
-        }
-        return listaString;
-    }
-
-    //actualizar invitado
-    public String actualizarInvitado(
-            String nombreUsuario,
-            String primerApellido,
-            String segundoApellido,
-            String telefono,
-            String carrera,
-            String correo,
-            String contrasena
-    ) {
-        if (listaInvitados.isEmpty()) {
-            
-            return "La lista de invitados está vacía.";
-            
-        }
-
-        for (Invitado invitado : listaInvitados) {
-            if (invitado.getNombreUsuario().equals(nombreUsuario)) {
-
-                invitado.setPrimerApellido(primerApellido);
-                invitado.setSegundoApellido(segundoApellido);
-                invitado.setTelefono(telefono);
-                invitado.setCarrera(carrera);
-                invitado.setCorreo(correo);
-                invitado.setContrasena(contrasena);
-
-                return "El invitado se ha actualizado con éxito.";
-               
-            }
-            
-        }
-        return "No se ha encontrado el usuario.";
-    }
-
-    //eliminar invitado
-    public String eliminarInvitado(String nombreUsuario) {
-        if (listaInvitados.isEmpty()) {
-            return "La lista de invitados está vacía.";
-        }
-
-        
-        boolean eliminado = listaInvitados.removeIf(invitado -> 
-            invitado.getNombreUsuario().equals(nombreUsuario)
-        );
-
-        if (eliminado) {
-            return "El invitado se ha eliminado con éxito.";
-        }
-
-        return "El invitado no se ha encontrado.";
-    }
-
-    //conteo
-    public int getCantidadInvitados() {
-        return listaInvitados.size();
-    }
-}
-
-
-
->>>>>>> 75a10faca468507b1ae6581801322b6b45331215
