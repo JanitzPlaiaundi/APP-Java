@@ -1,88 +1,3 @@
-<<<<<<< HEAD
-//v 13/02/2026 12:09
-package util;
-
-import java.util.ArrayList;
-import model.Atendiente;
-
-
-public class GestorAtendiente {
-    private static ArrayList<Atendiente> listaAtendientes = new ArrayList<>();
-
-    // crear atendiente
-    public String crearAtendiente(String dni, String contraseña, String nombre, String apellidos, String email) {
-        Atendiente nuevoAtendiente = new Atendiente(dni, contraseña, nombre, apellidos, email);
-        listaAtendientes.add(nuevoAtendiente);
-        return  "Atendiente con DNI: " + dni + " agregado con éxito.";
-    }
-
-    // listar atendientes
-    public String listarAtendientes() {
-        if (listaAtendientes.isEmpty()) {
-            return "No hay atendientes por ahora";
-        }
-        
-        String listaString = "";
-        for(Atendiente a : listaAtendientes) {
-            listaString += "\n" + a.toString();
-        }
-        return listaString;
-    }
-
-    // actualizar atendientes
-    public String actualizarAtendiente(String dni, String contraseña, String nombre, String apellidos, String email) {
-        if (listaAtendientes.isEmpty()) {
-
-            return "La lista de atendientes está vacía";
-        }
-        for (Atendiente atendiente : listaAtendientes) {
-
-            if (atendiente.getDni().equals(dni)) {
-
-                atendiente.setContraseña(contraseña);
-                atendiente.setNombre(nombre);
-                atendiente.setApellidos(apellidos);
-                atendiente.setEmail(email);
-
-                return "El atendiente se ha actualizado con éxito";
-            
-            }
-        }
-        return "El atendiente no se ha encontrado";
-    }
-
-    // eliminar atendiente
-    public String eliminarAtendiente(String dni) {
-
-        if (listaAtendientes.isEmpty()) {
-
-            return "La lista de atendientes está vacía";
-        }
-        Atendiente atendienteEliminar = null;
-        for (Atendiente atendiente : listaAtendientes) {
-
-            if (atendiente.getDni().equals(dni)) {
-
-                atendienteEliminar = atendiente;
-                break;
-            }
-        }
-        if (atendienteEliminar != null) {
-
-            listaAtendientes.remove(atendienteEliminar);
-            return "El atendiente se ha eliminado con éxito";
-        }
-        return "El atendiente no se ha encontrado";
-    }
-
-    // conteo
-    public int getCantidadAtendientes() {
-        return listaAtendientes.size();
-    }
-}
-
-
-
 =======
 //v 13/02/2026 12:09
 package util;
@@ -95,10 +10,10 @@ public class GestorAtendiente {
     private static ArrayList<Atendiente> listaAtendientes = new ArrayList<>();
 
     // crear atendiente
-    public String crearAtendiente(String dni, String contraseña, String nombre, String apellidos, String email) {
-        Atendiente nuevoAtendiente = new Atendiente(dni, contraseña, nombre, apellidos, email);
+    public String crearAtendiente(String dni, String contraseÃ±a, String nombre, String apellidos, String email) {
+        Atendiente nuevoAtendiente = new Atendiente(dni, contraseÃ±a, nombre, apellidos, email);
         listaAtendientes.add(nuevoAtendiente);
-        return  "Atendiente con DNI: " + dni + " agregado con éxito.";
+        return  "Atendiente con DNI: " + dni + " agregado con Ã©xito.";
     }
 
     // listar atendientes
@@ -115,21 +30,21 @@ public class GestorAtendiente {
     }
 
     // actualizar atendientes
-    public String actualizarAtendiente(String dni, String contraseña, String nombre, String apellidos, String email) {
+    public String actualizarAtendiente(String dni, String contraseÃ±a, String nombre, String apellidos, String email) {
         if (listaAtendientes.isEmpty()) {
 
-            return "La lista de atendientes está vacía";
+            return "La lista de atendientes estÃ¡ vacÃ­a";
         }
         for (Atendiente atendiente : listaAtendientes) {
 
             if (atendiente.getDni().equals(dni)) {
 
-                atendiente.setContraseña(contraseña);
+                atendiente.setContraseÃ±a(contraseÃ±a);
                 atendiente.setNombre(nombre);
                 atendiente.setApellidos(apellidos);
                 atendiente.setEmail(email);
 
-                return "El atendiente se ha actualizado con éxito";
+                return "El atendiente se ha actualizado con Ã©xito";
             
             }
         }
@@ -141,7 +56,7 @@ public class GestorAtendiente {
 
         if (listaAtendientes.isEmpty()) {
 
-            return "La lista de atendientes está vacía";
+            return "La lista de atendientes estÃ¡ vacÃ­a";
         }
         Atendiente atendienteEliminar = null;
         for (Atendiente atendiente : listaAtendientes) {
@@ -155,7 +70,7 @@ public class GestorAtendiente {
         if (atendienteEliminar != null) {
 
             listaAtendientes.remove(atendienteEliminar);
-            return "El atendiente se ha eliminado con éxito";
+            return "El atendiente se ha eliminado con Ã©xito";
         }
         return "El atendiente no se ha encontrado";
     }
@@ -165,7 +80,3 @@ public class GestorAtendiente {
         return listaAtendientes.size();
     }
 }
-
-
-
->>>>>>> 75a10faca468507b1ae6581801322b6b45331215
